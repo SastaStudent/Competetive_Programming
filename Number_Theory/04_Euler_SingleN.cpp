@@ -21,7 +21,7 @@ long long computer(long long n)
             result = (result*(i-1))/i;
         }
     }
-    //if n>1 then perform line 21;
+    //if n>1 then perform line 21 ;
     if(n>1) result=(result*(n-1))/n;
     return result;
 }
