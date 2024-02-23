@@ -10,7 +10,7 @@ long long computer(long long n)
 {
     if(n==0 || n==1) return 0;
     long long result=n;
-    for(long long i=2;i<=n;i++)
+    for(long long i=2;i*i<=n;i++)
     {
         if(n%i==0)
         {
@@ -21,6 +21,8 @@ long long computer(long long n)
             result = (result*(i-1))/i;
         }
     }
+    //if n>1 then perform line 21;
+    if(n>1) result=(result*(n-1))/n;
     return result;
 }
 
