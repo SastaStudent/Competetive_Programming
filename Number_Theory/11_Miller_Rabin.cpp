@@ -2,9 +2,9 @@
 #include <vector>
 #include <bits/stdc++.h>
 using namespace std;
-long binaryExpo(long a,long s,long n)
+long long binaryExpo(long long a,long long s,long long n)
 {
-    long res=1;
+    long long res=1;
     while(s>0)
     {
         if(s&1)
@@ -17,9 +17,9 @@ long binaryExpo(long a,long s,long n)
     }
     return res;
 }
-bool check_composite(long a,long s,long d,long n)
+bool check_composite(long long a,long long s,long long d,long long n)
 {
-    long x=binaryExpo(a,d,n);//a^d
+    long long x=binaryExpo(a,d,n);//a^d
     //next term is squre of previous term
     //like a^d -->a^2d --> a^4d --->a^8d...>so on
     //if anyone divides by n.. then number is prime else composite..
@@ -44,13 +44,13 @@ bool check_composite(long a,long s,long d,long n)
     return true;//if not divisible then composite.
 
 }
-bool miller_Rabin_NFA(long n)
+bool miller_Rabin_NFA(long long n)
 {
     if(n<=0) return false;
     if(n<4) return n==2 || n==3;
     /*n-1 = (a)^2^s *d */
-    long d=n-1;
-    long s=0;
+    long long d=n-1;
+    long long  s=0;
     while(d%2==0)
     {
         s++;
@@ -61,7 +61,7 @@ bool miller_Rabin_NFA(long n)
     //cin>>t;
     while(t--)
     {
-        long a=2+rand() %(n-3);
+        long long a=2+rand() %(n-3);
         if(check_composite(a,s,d,n)==true) return false;
 
     }
@@ -75,7 +75,7 @@ int main()
     cin>>t;
     while(t--)
     {
-        long n;
+        long long n;
         cin>>n;
         bool ans=miller_Rabin_NFA(n);
         if(ans==true) cout<<"Yes, "<<n<<" is Prime"<<endl;
