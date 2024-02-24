@@ -58,6 +58,8 @@ bool miller_Rabin_DFA(long long n)
     }
     int t=0;
     int arr[12]={2,3,5,7,11,13,17,19,23,29,31,37};
+    //for all prime number <=10^9 .. only use first 6 prime number as a
+    //for all prime number <=10^18.. use first 12 prime number as a
 
     while(t<12)
     {
