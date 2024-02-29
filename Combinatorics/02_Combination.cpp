@@ -27,6 +27,8 @@ int moduloInverse(int a,int b,int&x,int&y)
 }
 int Combination(int n,int r)
 {
+    //base case if r is greater than n.. then answer is zero or mention is the question
+    if(r>n) return 0;
     //formuls nCr = n!/(n-r)!*r!
     int first = factorial(n);
     int second=factorial(n-r);
