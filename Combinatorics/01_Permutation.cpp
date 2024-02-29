@@ -27,6 +27,8 @@ int moduloInverse(int a,int b,int&x,int&y)
 }
 int permutation(int n,int r)
 {
+    //base case if r greater than n then return 0 or mention in question
+    if(r>n) return 0;
     //formuls nPr = n!/(n-r)!
     int first = factorial(n);
     int second=factorial(n-r);
