@@ -22,6 +22,7 @@ void FindPattern(string s,string pat)
 }
 int main()
 {
+    //correct
     string s;
     string pat;
     cin>>s>>pat;
